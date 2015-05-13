@@ -12,8 +12,8 @@ public class ScoreManagementLocalImpl implements IScoreManagement {
 	private List<Score> allScores = new ArrayList<Score>();
 
 	public ScoreManagementLocalImpl() {
-		/* add random scores */
-		for (int i = 1; i <= 50; i++)
+		/* add 2 random scores */
+		for (int i = 1; i <= 2; i++)
 			allScores.add(new Score((long) (Math.random() * 1000000), System
 					.currentTimeMillis(), "GEORGE" + Math.random()));
 
@@ -21,8 +21,12 @@ public class ScoreManagementLocalImpl implements IScoreManagement {
 
 	@Override
 	public List<Score> getAllScores() {
-		// TODO Auto-generated method stub
 		return allScores;
+	}
+
+	@Override
+	public void addScore(Score score) {
+		allScores.add(score);
 	}
 
 }

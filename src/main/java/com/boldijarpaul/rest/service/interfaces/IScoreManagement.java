@@ -11,4 +11,5 @@ import com.boldijarpaul.rest.entities.*;
  */
 public interface IScoreManagement {
 	public List<Score> getAllScores();
+	public void addScore(Score score);
 }
