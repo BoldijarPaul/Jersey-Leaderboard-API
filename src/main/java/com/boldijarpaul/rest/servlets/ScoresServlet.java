@@ -6,12 +6,12 @@ import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Response;
 
 import com.boldijarpaul.rest.entities.RequestResult;
 import com.boldijarpaul.rest.entities.Score;
 import com.boldijarpaul.rest.helper.GsonHelper;
 import com.boldijarpaul.rest.service.ServiceLocator;
+
 
 @Path("/scores")
 public class ScoresServlet {
@@ -47,6 +47,7 @@ public class ScoresServlet {
 
 		requestResult.setMessage("Score successfully added!");
 		requestResult.setCode(RequestResult.Codes.SUCCESS);
+		requestResult.setData(score);
 		return GsonHelper.objectToJsonString(requestResult);
 
 	}
