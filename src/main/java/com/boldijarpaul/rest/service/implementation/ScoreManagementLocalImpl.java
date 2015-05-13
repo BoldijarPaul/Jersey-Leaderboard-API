@@ -37,4 +37,19 @@ public class ScoreManagementLocalImpl implements IScoreManagement {
 		return allScores.subList(0, Math.min(count, allScores.size()));
 	}
 
+	@Override
+	public int deleteScores(long value, String name) {
+		// TODO Auto-generated method stub
+		int deleted = 0;
+		for (int i = 0; i < allScores.size(); i++) {
+			if (allScores.get(i).getValue() == value
+					&& allScores.get(i).getUsername().equals(name)) {
+				/* we found a score that we want to delete */
+				deleted++;
+				allScores.remove(i--);
+			}
+		}
+		return deleted;
+	}
+
 }
