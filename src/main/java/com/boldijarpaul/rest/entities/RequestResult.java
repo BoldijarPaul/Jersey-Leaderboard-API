@@ -46,6 +46,8 @@ public class RequestResult {
 		public static int SUCCESS = 1;
 		/* missing parameter */
 		public static int PARAMETER_MISSING = 2;
+		/* invalid value */
+		public static int INVALID_VALUE = 3;
 	}
 
 }

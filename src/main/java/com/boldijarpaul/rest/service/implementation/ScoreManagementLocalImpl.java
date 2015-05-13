@@ -1,6 +1,7 @@
 package com.boldijarpaul.rest.service.implementation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.boldijarpaul.rest.entities.Score;
@@ -27,6 +28,13 @@ public class ScoreManagementLocalImpl implements IScoreManagement {
 	@Override
 	public void addScore(Score score) {
 		allScores.add(score);
+		Collections.sort(allScores);
+	}
+
+	@Override
+	public List<Score> getTopScores(int count) {
+		// TODO Auto-generated method stub
+		return allScores.subList(0, Math.min(count, allScores.size()));
 	}
 
 }
